@@ -29,13 +29,13 @@ class ServerControllerTest {
 
     @Test
     void testCreateServer() throws Exception{
-        //CreateServerRequestDto serverRequestDto = new CreateServerRequestDto("myServer");
+        // CreateServerDto createServerDto = new CreateServerDto("myServer");
 
         mockMvc.perform(post("/server")
                         .contentType(MediaType.APPLICATION_JSON)
                         .characterEncoding("utf-8")
                         .content(objectMapper.writeValueAsString(new CreateServerDto("myServer", ""))))
-                        .andExpect(status().isCreated())
+                .andExpect(status().isCreated())
                 .andDo(print());
 
         /*
